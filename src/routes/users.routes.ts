@@ -1,16 +1,24 @@
 import { Router } from 'express';
-import { getCustomRepository } from 'typeorm';
 
-import AppointmentsRepository from '../repositories/AppointmentsRepository';
-import CreateAppointmentService from '../services/CreateAppointmentServices';
+import CreateUseService from '../services/CreateUserService';
 
 const usersRouter = Router();
 
 usersRouter.post('/', async (request, response) => {
   try {
     const {name, email, password} = request.body;
-    
-    return response.send();
+
+    const createUser = new CreateUseService();
+
+    const user = await  createUser.execute({
+      name,
+      email,
+      password,
+    })
+
+    //delete user.password;
+
+    return response.send(user);
   } catch(err) {
      return response.status(400).json({ error: err.message });
   }
