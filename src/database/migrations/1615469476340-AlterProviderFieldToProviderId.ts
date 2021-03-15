@@ -1,4 +1,3 @@
-import { table } from "console";
 import {MigrationInterface, QueryRunner, TableColumn, TableForeignKey} from "typeorm";
 
 export default class AlterProviderFieldToProviderId1615469476340 
