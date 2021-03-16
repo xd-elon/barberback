@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
+    "dev": "ts-node-dev --transpile-only src/server.ts",
     "start": "ts-node src/index.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
@@ -18,6 +18,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "@types/multer": "^1.4.5",
     "@types/node": "^14.14.31",
     "@types/uuid": "^8.3.0",
     "@types/uuidv4": "^5.0.0",
@@ -26,8 +27,10 @@
     "class-transformer": "^0.4.0",
     "date-fns": "^2.19.0",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "global": "^4.4.0",
     "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "tsc": "^1.20150623.0",
