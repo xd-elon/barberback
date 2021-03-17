@@ -3,11 +3,9 @@ import { getRepository } from 'typeorm';
 import { sign } from 'jsonwebtoken';
 
 
-import AppError from '../errors/AppError';
-import authConfig from '../config/auth';
-
-
-import User from '../models/User';
+import AppError from '@shared/errors/AppError';
+import authConfig from '@config/auth';
+import User from '../infra/typeorm/entities/User';
 
 interface RequestDTO {
     email: string;
