@@ -6,10 +6,9 @@ import AppError from '@shared/errors/AppError';
 import uploadConfig from '@config/upload';
 import User from '../infra/typeorm/entities/User';
 
-
 interface Request {
     user_id: string;
-    filename: string
+    filename: string;
 }
 
 class UpdateUserAvatarService {
