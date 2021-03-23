@@ -1,4 +1,5 @@
 import {v4 as uuid} from 'uuid';
+import { isEqual } from 'date-fns';
 
 //  IAppointmentsrepository , principio de liskov
 import IAppointmentsRepository from '@modules/appointments/repositories/IApointmentsRepository';
@@ -11,7 +12,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
 
     public async findByDate(date: Date): Promise<Appointment | undefined> {
         const findAppointment = this.appointments.find(
-            appointment => appointment.date == date,
+            appointment => isEqual(appointment.date, date)
         );
 
         return findAppointment
